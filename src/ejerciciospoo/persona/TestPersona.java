@@ -68,7 +68,9 @@ public class TestPersona {
         });
 
         /**
-         * Salida con datos de prueba: {Nombre: Eduardo Edad: 13 DNI: 911539715N
+         * Salida con datos de prueba: 
+         * 
+         * {Nombre: Eduardo Edad: 13 DNI: 911539715N
          * Sexo: H Peso: 90.00 Altura: 1.45}
          *
          * Tiene sobrepeso.
