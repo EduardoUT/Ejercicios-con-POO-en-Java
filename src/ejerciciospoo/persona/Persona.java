@@ -6,7 +6,6 @@ package ejerciciospoo.persona;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Optional;
 
 /**
  * 2) Haz una clase llamada Persona que siga las siguientes condiciones:
@@ -216,8 +215,7 @@ public class Persona {
      * @return the peso
      */
     public BigDecimal getPeso() {
-        return peso.setScale(2, RoundingMode.DOWN
-        );
+        return peso.setScale(2, RoundingMode.DOWN);
     }
 
     /**
