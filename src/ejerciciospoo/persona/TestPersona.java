@@ -66,6 +66,31 @@ public class TestPersona {
             mensajeStatusEdad(persona.getEdad());
             System.out.println("");
         });
+
+        /**
+         * Salida con datos de prueba: {Nombre: Eduardo Edad: 13 DNI: 911539715N
+         * Sexo: H Peso: 90.00 Altura: 1.45}
+         *
+         * Tiene sobrepeso.
+         *
+         * Es menor de edad.
+         *
+         *
+         * {Nombre: Valeria Edad: 23 DNI: 122258134R Sexo: M Peso: 75.00 Altura:
+         * 1.85}
+         *
+         * Está por debajo de su peso ideal.
+         *
+         * Es mayor de edad.
+         *
+         *
+         * {Nombre: Patricio Edad: 25 DNI: 223949835P Sexo: H Peso: 70.00
+         * Altura: 1.91}
+         *
+         * Está en su peso ideal.
+         *
+         * Es mayor de edad.
+         */
     }
 
     public static void mensajeStatusIMC(int statusIMC) {
