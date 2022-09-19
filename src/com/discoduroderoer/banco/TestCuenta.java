@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejerciciospoo.banco;
+package com.discoduroderoer.banco;
 
-import ejerciciospoo.banco.Cuenta;
+import com.discoduroderoer.banco.Cuenta;
 import java.math.BigDecimal;
 
 /**
