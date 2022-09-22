@@ -13,9 +13,11 @@ import java.math.BigDecimal;
 public class TestElectrodomesticos {
     
     public static void main(String[] args) {
-        Electrodomestico electrodomestico = new Electrodomestico(new BigDecimal(123.99), "Negro", 'A', new BigDecimal(23));
+        Electrodomestico electrodomestico = new Electrodomestico(new BigDecimal(123.99), "Negro", 'A', 20);
         System.out.println(electrodomestico.getPeso());
         System.out.println(electrodomestico.getColor());
         System.out.println(electrodomestico.getConsumoEnergetico());
+        System.out.println(electrodomestico.precioFinal());
+        
     }
 }
