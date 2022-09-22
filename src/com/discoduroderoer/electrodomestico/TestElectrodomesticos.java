@@ -19,5 +19,11 @@ public class TestElectrodomesticos {
         System.out.println(electrodomestico.getConsumoEnergetico());
         System.out.println(electrodomestico.precioFinal());
         
+        Lavadora lavadora = new Lavadora(37, new BigDecimal(230.99), "Azul", 'C', 34);
+        System.out.println(lavadora.getColor());
+        System.out.println(lavadora.getCarga());
+        System.out.println(lavadora.getConsumoEnergetico());
+        System.out.println(lavadora.precioFinal());
+        
     }
 }

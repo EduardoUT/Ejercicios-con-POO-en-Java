@@ -33,7 +33,7 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
     public Electrodomestico(BigDecimal precioBase, String color,
             char consumoEnergetico, double peso) {
         if (esNegativoOMenorQueCero(precioBase)) {
-            throw new RuntimeException("El valor ingresado es "
+            throw new RuntimeException("El precio ingresado es "
                     + "negativo o menor que cero.");
         }
 
@@ -134,7 +134,7 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
     public BigDecimal precioFinal() {
         return this.precioBase.add(impuestoSegunConsumoEnergetico())
                 .add(impuestoSegunPeso())
-                .setScale(2, RoundingMode.CEILING);
+                .setScale(2, RoundingMode.HALF_EVEN);
     }
 
     private BigDecimal impuestoSegunConsumoEnergetico() {
@@ -142,23 +142,17 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
         char letraIngresada = this.consumoEnergetico;
         switch (letraIngresada) {
             case LETRA_A:
-                return resultado.add(new BigDecimal(100))
-                        .setScale(2, RoundingMode.CEILING);
+                return resultado.add(new BigDecimal(100));
             case LETRA_B:
-                return resultado.add(new BigDecimal(80))
-                        .setScale(2, RoundingMode.CEILING);
+                return resultado.add(new BigDecimal(80));
             case LETRA_C:
-                return resultado.add(new BigDecimal(60))
-                        .setScale(2, RoundingMode.CEILING);
+                return resultado.add(new BigDecimal(60));
             case LETRA_D:
-                return resultado.add(new BigDecimal(50))
-                        .setScale(2, RoundingMode.CEILING);
+                return resultado.add(new BigDecimal(50));
             case LETRA_E:
-                return resultado.add(new BigDecimal(30))
-                        .setScale(2, RoundingMode.CEILING);
+                return resultado.add(new BigDecimal(30));
             case LETRA_F:
-                return resultado.add(new BigDecimal(10))
-                        .setScale(2, RoundingMode.CEILING);
+                return resultado.add(new BigDecimal(10));
             default:
                 return resultado;
         }
@@ -167,17 +161,13 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
     private BigDecimal impuestoSegunPeso() {
         BigDecimal resultado = new BigDecimal(0.0);
         if (this.peso >= 0 && this.peso <= 19) {
-            return resultado.add(new BigDecimal(10))
-                    .setScale(2, RoundingMode.CEILING);
+            return resultado.add(new BigDecimal(10));
         } else if (this.peso >= 20 && this.peso <= 49) {
-            return resultado.add(new BigDecimal(50))
-                    .setScale(2, RoundingMode.CEILING);
+            return resultado.add(new BigDecimal(50));
         } else if (this.peso >= 50 && this.peso <= 79) {
-            return resultado.add(new BigDecimal(80))
-                    .setScale(2, RoundingMode.CEILING);
+            return resultado.add(new BigDecimal(80));
         } else if (this.peso > 80) {
-            return resultado.add(new BigDecimal(100))
-                    .setScale(2, RoundingMode.CEILING);
+            return resultado.add(new BigDecimal(100));
         } else {
             return resultado;
         }
