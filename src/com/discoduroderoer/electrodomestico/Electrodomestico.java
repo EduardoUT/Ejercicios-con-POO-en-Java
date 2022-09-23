@@ -30,6 +30,13 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
         this.peso = PESO_INICIAL;
     }
 
+    //Sobrecargando método constructor.
+    public Electrodomestico(BigDecimal precioBase, double peso) {
+        //Invocando constructor siguiente.
+        this(precioBase, ColorElectrodomestico.BLANCO.toString(),
+                CONSUMO_ENERGETICO_INICIAL, peso);
+    }
+
     public Electrodomestico(BigDecimal precioBase, String color,
             char consumoEnergetico, double peso) {
         if (esNegativoOMenorQueCero(precioBase)) {
@@ -64,13 +71,6 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
         this.color = comprobarColor(color);
         this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
         this.peso = peso;
-    }
-
-    //Sobrecargando método constructor.
-    public Electrodomestico(BigDecimal precioBase, double peso) {
-        //Sobre-escritura del constructor anterior.
-        this(precioBase, ColorElectrodomestico.BLANCO.toString(),
-                CONSUMO_ENERGETICO_INICIAL, peso);
     }
 
     /**
@@ -132,7 +132,8 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
     }
 
     public BigDecimal precioFinal() {
-        return this.precioBase.add(impuestoSegunConsumoEnergetico())
+        return this.precioBase
+                .add(impuestoSegunConsumoEnergetico())
                 .add(impuestoSegunPeso())
                 .setScale(2, RoundingMode.HALF_EVEN);
     }
