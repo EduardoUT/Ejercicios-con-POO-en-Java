@@ -5,8 +5,6 @@
 package com.discoduroderoer.electrodomestico;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -15,25 +13,6 @@ import java.util.List;
 public class TestElectrodomesticos {
 
     public static void main(String[] args) {
-        /*
-        Electrodomestico electrodomestico = new Electrodomestico(new BigDecimal(123.99), "Negro", 'A', 20);
-        System.out.println(electrodomestico.getPeso());
-        System.out.println(electrodomestico.getColor());
-        System.out.println(electrodomestico.getConsumoEnergetico());
-        System.out.println(electrodomestico.precioFinal());
-
-        Lavadora lavadora = new Lavadora(37, new BigDecimal(230.99), "Azul", 'C', 34);
-        System.out.println(lavadora.getColor());
-        System.out.println(lavadora.getCarga());
-        System.out.println(lavadora.getConsumoEnergetico());
-        System.out.println(lavadora.precioFinal());
-
-        System.out.println("<--->");
-        Television television = new Television(60, false, new BigDecimal(400.00), "Negro", 'E', 30);
-        System.out.println(television.precioFinal());
-         */
-
-        
         Electrodomestico[] electrodomesticos = {
             new Electrodomestico(new BigDecimal(123.99), "Negro", 'A', 20),
             new Lavadora(37, new BigDecimal(230.99), "Azul", 'B', 34),
@@ -51,7 +30,7 @@ public class TestElectrodomesticos {
 
         System.out.println("|-----Precio final Electrodomesticos-----|");
         BigDecimal total = new BigDecimal(0.0);
-        for (Electrodomestico e: electrodomesticos) {
+        for (Electrodomestico e : electrodomesticos) {
             total = total.add(e.precioFinal());
         }
         System.out.println(total);
