@@ -173,4 +173,10 @@ public class Electrodomestico implements ILetrasConsumoEnergetico {
             return resultado;
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("Precio final: ".concat("%.2f"), this.precioFinal());
+    }
+
 }
